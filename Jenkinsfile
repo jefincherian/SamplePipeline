@@ -4,14 +4,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello World - Build'
+                withMaven(withMaven : 'apache-maven-3.8.5')
+                bat 'mvn clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Hello World - Test'
-            }
+                withMaven(withMaven : 'apache-maven-3.8.5')
+                bat 'mvn clean test'            }
         }
 
         stage('Deploy') {
