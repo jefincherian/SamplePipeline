@@ -28,8 +28,7 @@ pipeline {
             always{
                 mail to: "jefin@qburst.com",
                 subject: "Jenkins Build:${currentBuild.currentResult}: ${env.JOB_NAME}",
-                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}
-                \n\nThanks!\nAutomation Team"
+                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}\n\nThanks!\nAutomation Team"
                 //attachLog: true
             }
         }
